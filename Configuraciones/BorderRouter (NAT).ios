@@ -1,0 +1,37 @@
+en
+conf t
+hostname BorderRpouter-NAT
+no ip domain lookup
+enable secret class
+line console 0
+password RT@Lab!NT
+login
+line vty 0 4
+password RT@Lab!NT
+login
+service password-encryption
+banner motd $--- Unauthorized Access is Strictly Forbidden ---$
+do wr
+
+int f2/0
+ip add 192.168.100.2 255.255.255.0
+description WANInterface
+no sh
+exit
+
+ip route 0.0.0.0 0.0.0.0 192.168.100.1
+
+ip name-server 192.168.100.1
+
+Access-list 1 permit 0.0.0.0 0.0.0.0
+
+ip nat inside source list 1 int fa2/0 overload
+
+int f2/0
+ip nat outside
+exit
+
+int g0/0
+ip add 172.16.0.5 255.255.255.252
+description Bordet->Firewall link
+ip nat inside
