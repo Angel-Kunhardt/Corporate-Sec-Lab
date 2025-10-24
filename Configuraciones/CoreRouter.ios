@@ -17,27 +17,19 @@ username SSHadmin secret LabSec2025
 ip domain name LabSec.Dev
 crypto key generate rsa general-keys modulus 1024
 
-int f2/0
-ip add 192.168.100.2 255.255.255.0
-description WANInterface
-no sh
-exit
-
-ip route 0.0.0.0 0.0.0.0 192.168.100.1
-
-ip name-server 192.168.100.1
-
-Access-list 1 permit 172.16.0.0 0.0.255.255
-
-ip nat inside source list 1 int fa2/0 overload
-
-int f2/0
-ip nat outside
-exit
-
 int g0/0
-ip add 172.16.0.5 255.255.255.252
-description Bordet->Firewall link
-ip nat inside
+ip add 172.16.0.10 255.255.255.252
+description CoreRouter->Firewall
 no sh
 
+int fa2/0
+no ip add
+no sh
+
+int fa2/1
+no ip add
+no sh
+
+router ospf 10
+router-id 10.10.10.10
+passive-interface default
