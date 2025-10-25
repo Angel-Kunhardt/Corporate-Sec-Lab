@@ -1,6 +1,6 @@
 en
 conf t
-hostname BorderRouter-NAT
+hostname CoreRouter
 no ip domain lookup
 enable secret class
 line console 0
@@ -17,19 +17,35 @@ username SSHadmin secret LabSec2025
 ip domain name LabSec.Dev
 crypto key generate rsa general-keys modulus 1024
 
+ip route 0.0.0.0 0.0.0.0 172.16.0.9
+
 int g0/0
 ip add 172.16.0.10 255.255.255.252
 description CoreRouter->Firewall
 no sh
+exit
 
 int fa2/0
 no ip add
+description CoreRouter->DataCenter
 no sh
 
 int fa2/1
 no ip add
+description CoreRouter->Core-SW
+no sh
+
+int fa3/0
+no ip add
+description CoreRouter->IT-SW
 no sh
 
 router ospf 10
 router-id 10.10.10.10
 passive-interface default
+
+int fa2/0.10
+encapsulation dot1q 10
+ip add 172.16.10.1 255.255.255.0
+description DataCenter
+ip ospf 10 area 0

@@ -4,10 +4,10 @@ hostname BorderRouter-NAT
 no ip domain lookup
 enable secret class
 line console 0
-password LabSec2025
+password RT@Lab!NT
 login
 line vty 0 4
-password LabSec2025
+password RT@Lab!NT
 transport input ssh
 login
 banner motd $--- Unauthorized Access is Strictly Forbidden ---$
