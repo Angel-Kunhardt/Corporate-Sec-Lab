@@ -1,0 +1,13 @@
+
+vlan 1
+name native
+vlan 10
+name DataCenter
+vlan 20
+name HR
+vlan 21
+name Finance
+vlan 22
+name Administration
+vlan 23
+name IT

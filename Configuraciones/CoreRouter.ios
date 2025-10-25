@@ -19,6 +19,11 @@ crypto key generate rsa general-keys modulus 1024
 
 ip route 0.0.0.0 0.0.0.0 172.16.0.9
 
+int vlan 1
+ip add 172.16.1.2 255.255.255.240
+no sh
+exit
+
 int g0/0
 ip add 172.16.0.10 255.255.255.252
 description CoreRouter->Firewall
@@ -43,6 +48,12 @@ no sh
 router ospf 10
 router-id 10.10.10.10
 passive-interface default
+network 172.16.1.0 0.0.0.3 area 0
+network 172.16.10.0 0.0.0.255 area 0
+network 172.16.20.0 0.0.0.255 area 0
+network 172.16.21.0 0.0.0.255 area 0
+network 172.16.22.0 0.0.0.255 area 0
+network 172.16.23.0 0.0.0.255 area 0
 
 int fa2/0.10
 encapsulation dot1q 10
