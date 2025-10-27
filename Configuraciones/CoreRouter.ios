@@ -25,25 +25,16 @@ description CoreRouter->Firewall
 no sh
 exit
 
-int fa2/0
+int g1/0
 no ip add
-description Vlan10 - DataCenter-SW
+description CoreRouter->CoreSwitch
 no sh
-
-int fa2/1
-no ip add
-description CoreRouter->Core-SW
-no sh
-
-int fa3/0
-no ip add
-description Vlan23 - IT-SW
-no sh
+exit
 
 router ospf 10
 router-id 10.10.10.10
-passive-interface default
-no passive-interface g0/0
+passive-int default
+no passive-int g0/0
 network 172.16.0.0 0.0.0.3 area 0
 network 172.16.0.4 0.0.0.3 area 0
 network 172.16.0.8 0.0.0.3 area 0
@@ -54,37 +45,37 @@ network 172.16.21.0 0.0.0.255 area 0
 network 172.16.22.0 0.0.0.255 area 0
 network 172.16.23.0 0.0.0.255 area 0
 
-interface fa2/0.1
-no encapsulation dot1q 1 native
-no ip address 172.16.1.1 255.255.255.240
-no description Management
-no ip ospf 10 area 0
+int g1/0.100
+encapsulation dot1q 100 native
+ip address 172.16.1.1 255.255.255.240
+description VLAN 100 - Management
+ip ospf 10 area 0
 
-int fa2/0.10
+int g1/0.10
 encapsulation dot1q 10
 ip add 172.16.10.1 255.255.255.0
  description VLAN 10 - DataCenter
 ip ospf 10 area 0
 
-interface Fa3/0.23
+int g1/0.23
 encapsulation dot1q 23
 ip address 172.16.23.1 255.255.255.0
 description VLAN 23 - IT
 ip ospf 10 area 0
 
-interface fa2/1.20
+int g1/0.20
 encapsulation dot1q 20
 ip address 172.16.20.1 255.255.255.0
 description VLAN 20 - HR
 ip ospf 10 area 0
 
-interface fa2/1.21
+int g1/0.21
 encapsulation dot1q 21
 ip address 172.16.21.1 255.255.255.0
 description VLAN 21 - Finance
 ip ospf 10 area 0
 
-interface fa2/1.22
+int g1/0.22
 encapsulation dot1q 22
 ip address 172.16.22.1 255.255.255.0
 description VLAN 22 - Administration

@@ -1,5 +1,7 @@
 
-vlan 1
+VLAN's
+
+vlan 100
 name native
 vlan 10
 name DataCenter
@@ -11,3 +13,6 @@ vlan 22
 name Administration
 vlan 23
 name IT
+
+
+CoreRouter
