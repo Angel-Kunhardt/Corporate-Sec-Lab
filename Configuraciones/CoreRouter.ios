@@ -54,29 +54,33 @@ ip ospf 10 area 0
 int g1/0.10
 encapsulation dot1q 10
 ip add 172.16.10.1 255.255.255.0
- description VLAN 10 - DataCenter
+description VLAN 10 - DataCenter
 ip ospf 10 area 0
 
 int g1/0.23
 encapsulation dot1q 23
 ip address 172.16.23.1 255.255.255.0
 description VLAN 23 - IT
+ip helper-address 172.16.10.10
 ip ospf 10 area 0
 
 int g1/0.20
 encapsulation dot1q 20
 ip address 172.16.20.1 255.255.255.0
 description VLAN 20 - HR
+ip helper-address 172.16.10.10
 ip ospf 10 area 0
 
 int g1/0.21
 encapsulation dot1q 21
 ip address 172.16.21.1 255.255.255.0
 description VLAN 21 - Finance
+ip helper-address 172.16.10.10
 ip ospf 10 area 0
 
 int g1/0.22
 encapsulation dot1q 22
 ip address 172.16.22.1 255.255.255.0
 description VLAN 22 - Administration
+ip helper-address 172.16.10.10
 ip ospf 10 area 0

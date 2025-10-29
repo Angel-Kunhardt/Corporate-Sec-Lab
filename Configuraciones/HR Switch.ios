@@ -1,6 +1,6 @@
 en
 conf t
-hostname ADM-SW
+hostname HR-SW
 no ip domain lookup
 enable secret class
 line console 0
@@ -27,37 +27,37 @@ description Link to CoreSwitch
 switchport trunk encapsulation dot1q 
 switchport mode trunk
 switchport trunk native vlan 100
-switchport trunk allowed vlan 100,22
+switchport trunk allowed vlan 100,20
 duplex full
 no sh
 exit
 
 int range e0/1 - 3
 switchport mode access
-switchport access vlan 22
+switchport access vlan 20
 no sh
 exit
 
 int range e1/0 - 3
 switchport mode access
-switchport access vlan 22
+switchport access vlan 20
 no sh
-
 exit
+
 int range e2/0 - 3
 switchport mode access
-switchport access vlan 22
+switchport access vlan 20
 no sh
-
 exit
+
 int range e3/0 - 3
 switchport mode access
-switchport access vlan 22
+switchport access vlan 20
 no sh
-
+exit
 
 int vlan 100
-ip add 172.16.1.3 255.255.255.240
+ip add 172.16.1.6 255.255.255.240
 no sh
 exit
 
