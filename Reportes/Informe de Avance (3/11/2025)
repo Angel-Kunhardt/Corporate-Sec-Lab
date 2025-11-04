@@ -1,0 +1,39 @@
+# Informe de Avance – Proyecto Laboratorio de Red Corporativa
+
+## 1. Resumen Ejecutivo
+Configuración inicial de la infraestructura de red empresarial, asegurando conectividad interna, servicios de red básicos y acceso a internet mediante NAT.
+
+## 2. Alcance del Avance
+Componentes trabajados:
+- Routers (principal y border-router)
+- Switches departamentales
+- Firewall Fortigate
+- Servidor LabSec.Dev (Windows Server)
+- VLANs y topología GNS3
+![alt text](../../../Capturas/DHCP_1.png)
+## 3. Objetivos Conseguidos
+- ✅ Conectividad completa en la red  
+- ✅ Configuración de VLANs y protocolo OSPF  
+- ✅ Acceso al servidor DHCP desde todos los departamentos  
+- ✅ Configuración del Fortigate y del Border-Router para salida a internet mediante NAT  
+- ✅ Configuración inicial de Active Directory, DNS y DHCP en el servidor **LabSec.Dev**
+
+## 4. Resultados / Pruebas
+- Pruebas de conectividad (`ping`, `tracert`) entre todos los departamentos exitosas.  
+- Verificación de asignación automática de IPs desde el servidor DHCP.  
+- Confirmación de resolución DNS interna y conectividad externa.  
+- Registros del Fortigate muestran NAT funcional hacia la WAN.
+
+## 5. Problemas Detectados
+- Ajustes menores en rutas OSPF al incorporar nuevos routers.  
+- Verificación pendiente de sincronización entre DNS y AD.
+
+## 6. Próximos Pasos
+- Integrar Splunk y Wazuh para monitoreo de eventos y seguridad.  
+- Implementar políticas de firewall detalladas por departamento.  
+- Configurar usuarios y grupos en Active Directory.  
+- Documentar configuración del Fortigate y respaldo de GNS3.
+
+## 7. Fecha y Responsable
+**Fecha:** 03/11/2025  
+**Responsable:** AngelKunhardt
