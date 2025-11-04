@@ -10,7 +10,7 @@ Componentes trabajados:
 - Firewall Fortigate
 - Servidor LabSec.Dev (Windows Server)
 - VLANs y topología GNS3
-![alt text](../../../Capturas/DHCP_1.png)
+
 ## 3. Objetivos Conseguidos
 - ✅ Conectividad completa en la red  
 - ✅ Configuración de VLANs y protocolo OSPF  
@@ -33,7 +33,10 @@ Componentes trabajados:
 - Implementar políticas de firewall detalladas por departamento.  
 - Configurar usuarios y grupos en Active Directory.  
 - Documentar configuración del Fortigate y respaldo de GNS3.
+- Implemtentar Politicas de control de acceso.
+- Implementar Monitoreo de Red (Zabbix).
+- Implementar EDR.
+- Implementar Syslog Server.
 
-## 7. Fecha y Responsable
 **Fecha:** 03/11/2025  
 **Responsable:** AngelKunhardt
