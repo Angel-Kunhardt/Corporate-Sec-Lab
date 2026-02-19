@@ -2,7 +2,7 @@ en
 conf t
 hostname ADM-SW
 no ip domain lookup
-enable secret class
+enable secret LabSec2025
 line console 0
 password LabSec2025
 login
@@ -62,3 +62,4 @@ no sh
 exit
 
 ip default-gateway 172.16.1.1
+

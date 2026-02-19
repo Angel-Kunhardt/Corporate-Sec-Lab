@@ -2,7 +2,7 @@ en
 conf t
 hostname DC-SW
 no ip domain lookup
-enable secret class
+enable secret LabSec2025
 line console 0
 password LabSec2025
 login
@@ -12,7 +12,6 @@ transport input ssh
 login
 banner motd $--- Unauthorized Access is Strictly Forbidden ---$
 service password-encryption
-banner motd $Solo Usuarios autorizados$
 username SSHadmin secret LabSec2025
 ip domain name LabSec.Dev
 crypto key generate rsa general-keys modulus 1024

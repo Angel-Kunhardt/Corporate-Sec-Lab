@@ -7,7 +7,7 @@ config system interface
     next
     edit port2
         set ip 172.16.0.9 255.255.255.252
-        set allowaccess ping https ssh http
+        set allowaccess ping https ssh http 
         set alias "LAN"
 
 --------------------------------------------------------------
@@ -38,8 +38,8 @@ end
 
 config system dns
     set primary 192.168.100.1
-    set secondary 8.8.8.8
 end
+
 --------------------------------------------------------------
 config router ospf
     set router-id 172.16.0.9
@@ -50,3 +50,11 @@ config router ospf
     config network
         edit 1
             set prefix 172.16.0.8 255.255.255.252
+
+--------------------------------------------------------------
+
+config firewall policy
+    edit 1
+        set logtraffic all
+    next
+end

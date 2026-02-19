@@ -12,11 +12,11 @@ Componentes trabajados:
 - VLANs y topología GNS3
 
 ## 3. Objetivos Conseguidos
-- ✅ Conectividad completa en la red  
-- ✅ Configuración de VLANs y protocolo OSPF  
-- ✅ Acceso al servidor DHCP desde todos los departamentos  
-- ✅ Configuración del Fortigate y del Border-Router para salida a internet mediante NAT  
-- ✅ Configuración inicial de Active Directory, DNS y DHCP en el servidor **LabSec.Dev**
+- Conectividad completa en la red  
+- Configuración de VLANs y protocolo OSPF  
+- Acceso al servidor DHCP desde todos los departamentos  
+- Configuración del Fortigate y del Border-Router para salida a internet mediante NAT  
+- Configuración inicial de Active Directory, DNS y DHCP en el servidor **LabSec.Dev**
 
 ## 4. Resultados / Pruebas
 - Pruebas de conectividad (`ping`, `tracert`) entre todos los departamentos exitosas.  
@@ -29,7 +29,7 @@ Componentes trabajados:
 - Verificación pendiente de sincronización entre DNS y AD.
 
 ## 6. Próximos Pasos
-- Integrar Splunk y Wazuh para monitoreo de eventos y seguridad.  
+- Integrar Wazuh para monitoreo de eventos y seguridad.  
 - Implementar políticas de firewall detalladas por departamento.  
 - Configurar usuarios y grupos en Active Directory.  
 - Documentar configuración del Fortigate y respaldo de GNS3.
@@ -39,4 +39,3 @@ Componentes trabajados:
 - Implementar Syslog Server.
 
 **Fecha:** 03/11/2025  
-**Responsable:** AngelKunhardt

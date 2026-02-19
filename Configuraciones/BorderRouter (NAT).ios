@@ -2,17 +2,16 @@ en
 conf t
 hostname BorderRouter-NAT
 no ip domain lookup
-enable secret class
+enable secret LabSec2025
 line console 0
-password RT@Lab!NT
+password LabSec2025
 login
 line vty 0 4
-password RT@Lab!NT
+password LabSec2025
 transport input ssh
 login
 banner motd $--- Unauthorized Access is Strictly Forbidden ---$
 service password-encryption
-banner motd $Solo Usuarios autorizados$
 username SSHadmin secret LabSec2025
 ip domain name LabSec.Dev
 crypto key generate rsa general-keys modulus 1024

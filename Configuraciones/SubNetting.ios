@@ -22,7 +22,7 @@ name IT
 IP's
 
 WinServ-LabSec.Dev 172.16.10.10
-Centos(SplunkServ) 172.16.10.11
+Centos(Wazuh) 172.16.10.11
 
 CoreRouter 172.16.1.1
 CoreSwitch 172.16.1.2
@@ -32,4 +32,3 @@ FNC-Switch 172.16.1.5
 HR-Switch 172.16.1.6
 ADM-Switch 172.16.1.7
 
-wget -O splunk.tgz "https://download.splunk.com/products/splunk/releases/9.0.3/linux/splunk-9.0.3-dd0128b1f8cd-Linux-x86_64.tgz"   
