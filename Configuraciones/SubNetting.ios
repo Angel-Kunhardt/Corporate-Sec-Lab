@@ -8,27 +8,19 @@ vlan 10
 name DataCenter
 
 vlan 20
-name HR
-
-vlan 21
-name Finance
-
-vlan 22
-name Administration
-
-vlan 23
 name IT
 
 IP's
 
+Fortigate 172.16.0.9
 WinServ-LabSec.Dev 172.16.10.10
 Centos(Wazuh) 172.16.10.11
 
+BorderRouter 172.16.0.5
 CoreRouter 172.16.1.1
 CoreSwitch 172.16.1.2
 IT-Switch 172.16.1.3
 DC-Switch 172.16.1.4
-FNC-Switch 172.16.1.5
-HR-Switch 172.16.1.6
-ADM-Switch 172.16.1.7
+
+
 

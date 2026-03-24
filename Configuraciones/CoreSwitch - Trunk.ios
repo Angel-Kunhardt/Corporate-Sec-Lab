@@ -26,12 +26,6 @@ name native
 vlan 10
 name DataCenter
 vlan 20
-name HR
-vlan 21
-name Finance
-vlan 22
-name Administration
-vlan 23
 name IT
 exit
 
@@ -40,37 +34,7 @@ description Link to CoreRouter
 switchport trunk encapsulation dot1q 
 switchport mode trunk
 switchport trunk native vlan 100
-switchport trunk allowed vlan 100,10,20,21,22,23
-duplex full
-no sh
-exit
-
-int e0/1
-description Link to CoreRouter
-switchport trunk encapsulation dot1q 
-switchport mode trunk
-switchport trunk native vlan 100
-switchport trunk allowed vlan 22,100
-duplex full
-no sh
-exit
-
-int e0/2
-description Link to HR-SW
-switchport trunk encapsulation dot1q 
-switchport mode trunk
-switchport trunk native vlan 100
-switchport trunk allowed vlan 20,100
-duplex full
-no sh
-exit
-
-int e0/3
-description Link to FNC-SW
-switchport trunk encapsulation dot1q 
-switchport mode trunk
-switchport trunk native vlan 100
-switchport trunk allowed vlan 21,100
+switchport trunk allowed vlan 100,10,20
 duplex full
 no sh
 exit
@@ -80,7 +44,7 @@ description Link to IT-SW
 switchport trunk encapsulation dot1q 
 switchport mode trunk
 switchport trunk native vlan 100
-switchport trunk allowed vlan 23,100
+switchport trunk allowed vlan 20,100,10
 duplex full
 no sh
 exit
@@ -90,7 +54,7 @@ description Link to DC-SW
 switchport trunk encapsulation dot1q 
 switchport mode trunk
 switchport trunk native vlan 100
-switchport trunk allowed vlan 23,10,100
+switchport trunk allowed vlan 20,10,100
 duplex full
 no sh
 exit
